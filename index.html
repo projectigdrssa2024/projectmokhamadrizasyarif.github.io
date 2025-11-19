@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+.container {
+    padding: 50px;
+  background-color: lightblue;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 18px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<form>
+  <div class="container">
+  <center>  <h1> Form Pasien Ambulans 119 RSSA</h1> </center>
+  <hr>
+  <label> Nama </label> 
+<input type="text" name="Nama" placeholder= "Nama" size="15" required /> 
+<label> Nomor Register: </label> 
+<input type="text" name="Nomor Register" placeholder="Nomor Register" size="15" required /> 
+<div>
+<script>  
+function ageCalculator() {  
+    var userinput = document.getElementById("DOB").value;  
+    var dob = new Date(userinput);  
+    if(userinput==null || userinput=='') {  
+      document.getElementById("message").innerHTML = "**Mohon Isi Tanggal Lahir";    
+      return false;   
+    } else {  
+      
+    //calculate month difference from current date in time  
+    var month_diff = Date.now() - dob.getTime();  
+      
+    //convert the calculated difference in date format  
+    var age_dt = new Date(month_diff);   
+      
+    //extract year from date      
+    var year = age_dt.getUTCFullYear();  
+      
+    //now calculate the age of the user  
+    var age = Math.abs(year - 1970);  
+      
+    //display the calculated age  
+    return document.getElementById("result").innerHTML =    
+             "Usia: " + age + " Tahun. ";  
+    }  
+}  
+</script> 
+<!-- Choose a date and enter in input field -->  
+Tanggal Lahir: <input type=date id = DOB>  
+<span id = "message" style="color:red"> </span> 
+  
+<!-- Choose a date and enter in input field -->  
+<button type="submit" onclick = "ageCalculator()"> Klik Umur </button> 
+<h3 style="color:red" id="result" align="left"></h3>   
+</div>
+
+<div>
+<label> 
+Jenis Kelamin :
+</label>
+<input type="radio" value="Laki-laki" name="Jenis Kelamin"> Laki-laki 
+<input type="radio" value="Perempuan" name="Jenis Kelamin"> Perempuan 
+</div>
+
+<div>
+<label> No Telepon :</label>
+<input type="text" name="No Telepon" placeholder="No Telepon" size="10"/ required> 
+</div>
+
+<div>
+<label> 
+Level Pasien :
+</label> 
+<select>
+<option value="0,5">0,5</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+</div>
+
+<label> Alamat :
+<br>
+<textarea cols="80" rows="3" placeholder="Alamat" value="address" required></textarea>
+
+
+        <h2>Armada Ambulans 119<br><small></small></h2>
+    </fieldset>
+
+    <!-- Field type: "choices" id: "Armada Ambulans 119" -->
+    <fieldset>
+            <div class="form-group">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.Armada Ambulans 119" value="Ambulans Hiace Premio" required>
+                    Ambulans Hiace Premio
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.Armada Ambulans 119" value="Ambulans Hiace Commuter" required>
+                    Ambulans Hiace Commuter
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.Armada Ambulans 119" value="Ambulans Hilux 4x4" required>
+                    Ambulans Toyota Hilux 4x4
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <h2>Catatan Waktu<br><small></small></h2>
+    </fieldset>
+
+<!-- Field type: "time" id: "Waktu Kejadian" -->
+    <fieldset>
+        <legend for="Waktu Kejadian">Waktu Kejadian</legend>
+        <div class="form-group">
+            <input type="time" id="Waktu Kejadian" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Panggilan" -->
+    <fieldset>
+        <legend for="Jam Panggilan">Jam Panggilan</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Panggilan" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Berangkat" -->
+    <fieldset>
+        <legend for="Jam Berangkat">Jam Berangkat</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Berangkat" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Tiba di Lokasi" -->
+    <fieldset>
+        <legend for="Jam Tiba di Lokasi">Jam Tiba di Lokasi</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Tiba di Lokasi" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Tiba di Lokasi" -->
+    <fieldset>
+        <legend for="Jam Tiba di Lokasi">Jam Tiba di Lokasi</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Tiba di Lokasi" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Meninggalkan Lokasi" -->
+    <fieldset>
+        <legend for="Jam Meninggalkan Lokasi">Jam Meninggalkan Lokasi</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Meninggalkan Lokasi" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Tiba di Tujuan" -->
+    <fieldset>
+        <legend for="Jam Tiba di Tujuan">Jam Tiba di Tujuan</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Tiba di Tujuan" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Meninggalkan Tujuan" -->
+    <fieldset>
+        <legend for="Jam Meninggalkan Tujuan">Jam Meninggalkan Tujuan</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Meninggalkan Tujuan" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "time" id: "Jam Tiba di Pusat Ambulans" -->
+    <fieldset>
+        <legend for="Jam Tiba di Pusat Ambulans">Jam Tiba di Pusat Ambulans</legend>
+        <div class="form-group">
+            <input type="time" id="Jam Tiba di Pusat Ambulans" placeholder="1:59:51 AM" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+
+        <h2>Pemeriksaan Primer<br><small></small></h2>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "Posisi Pasien Saat Ditemukan" -->
+    <fieldset>
+        <legend for="Posisi Pasien Saat Ditemukan">Posisi Pasien Saat Ditemukan</legend>
+        <div class="form-group">
+            <select id="Posisi Pasien Saat Ditemukan" name="entry.Posisi Pasien Saat Ditemukan" class="form-control">
+                <option value="-">-</option>
+                <option value="Berdiri">Berdiri</option>
+                <option value="Duduk">Duduk</option>
+                <option value="Miring">Miring</option>
+                <option value="Terlentang">Terlentang</option>
+                <option value="Tengkurap">Tengkurap</option>
+                <option value="Terjepit">Terjepit</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "Cedera Tulang" -->
+    <fieldset>
+        <legend for="Cedera Tulang">Cedera Tulang</legend>
+        <div class="form-group">
+            <select id="Cedera Tulang" name="entry.Cedera Tulang" class="form-control">
+                <option value="-">-</option>
+                <option value="Ya">Ya</option>
+                <option value="Tidak">Tidak</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "A (Airway)" -->
+    <fieldset>
+        <legend for="A (Airway)">A (Airway) 
+Jalan Nafas</legend>
+        <div class="form-group">
+            <select id="A (Airway)" name="entry.A (Airway)" class="form-control">
+                <option value="-">-</option>
+                <option value="Bersih">Bersih</option>
+                <option value="Obstruksi Total">Obstruksi Total</option>
+                <option value="Obstruksi Parsial">Obstruksi Parsial</option>
+                <option value="Snoring">Snoring</option>
+                <option value="Gurgling">Gurgling</option>
+                <option value="Wheezing">Wheezing</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "B (Breathing)" -->
+    <fieldset>
+        <legend for="B (Breathing)">B (Breathing) 
+Pernafasan</legend>
+        <div class="form-group">
+            <select id="B (Breathing)" name="entry.B (Breathing)" class="form-control">
+                <option value="-">-</option>
+                <option value="Normal">Normal</option>
+                <option value="Dangkal">Dangkal</option>
+                <option value="Retraksi">Retraksi</option>
+                <option value="Takipnea">Takipnea</option>
+                <option value="Dys[nea">Dys[nea</option>
+                <option value="Apnea">Apnea</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "C (Circulation)" -->
+    <fieldset>
+        <legend for="C (Circulation)">C (Circulation) </legend>
+        <div class="form-group">
+            <select id="C (Circulation)" name="entry.C (Circulation)" class="form-control">
+                <option value="-">-</option> 
+                <option value="Normal">Normal</option>
+                <option value="Lambat">Lambat</option>
+                <option value="Perdarahan">Perdarahan</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+
